@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/image/bday.png">
+    <title>for paniii!!!</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <div class="page active" id="page1">
+            <img src="image/1.gif" alt="">
+            <h1 class="glitter-text">happy birthdayy paniiwww!</h1>
+            <p>I hope all things and everything best for you ( ﾉ^ω^)ﾉ</p>
+            <button class="button" onclick="goToPage(2)">tap ‹3</button>
+        </div>
+
+        <div class="page" id="page2">
+            <img src="image/2.gif" alt="">
+            <h2 class="glitter-text">Your gift is on the wayyy</h2>
+            <p>Im sorry that the gift will be late, two of them will come around 11 to 15 dec; and the last one will come around 17 to 18 dec (very late because of po).  (ー_ー;)</p>
+            <button class="button" onclick="goToPage(3)">tap ‹3</button>
+        </div>
+
+        <div class="page" id="page3">
+            <img src="image/3.gif" alt="">
+            <h2 class="glitter-text">SURPRISEEE ( ☆∀☆)</h2>
+            <p>Lets reveal thinngs that i bought for you!!</p>
+            <button class="button" onclick="goToPage(4)">tap ‹3</button>
+        </div>
+
+        <div class="page" id="page4">
+            <img src="image/gift1.jpg" alt="Maxx Andreas">
+            <h2 class="glitter-text">nana phones trap!!</h2>
+            <p>you asked for a nana phone strap recommendation and told me that you needed one.</p>
+            <button class="button" onclick="goToPage(5)">tap ‹3</button>
+        </div>
+
+        <div class="page" id="page5">
+            <img src="image/gift2.jpg" alt="">
+            <h1 class="glitter-text">Sweater (ﾟーﾟ*)</h1>
+            <p>a Conan Gray reference... hehe. Seharusnya 3rd of december but again aku lupa kalo ngirim ke kamu takes more time :p.</p>
+            <button class="button" onclick="goToPage(6)">tap ‹3</button>
+        </div>
+
+        <div class="page" id="page6">
+            <img src="image/gift3.jpg" alt="">
+            <h2 class="glitter-text">Bonnabel keychainnnn!!!</h2>
+            <p> I promised you to give this keychain and couple with me; so here it is!</p>
+            <button class="button" onclick="goToPage(7)">tap ‹3</button>
+        </div>
+
+        <div class="page" id="page7">
+            <h2 class="glitter-text">( ￣▽￣)</h2>
+            <div class="letter-container">
+                <div class="letter" id="letterText"></div>
+            </div>
+            <p id="typing-status" class="final-message">tunggu sampai suratnya selesai diketik yaa!</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;"><span class="highlight"></span></p>
+            
+            <div class="navigation-buttons">
+                <button class="button" id="prevLetterButton" style="display:none;" onclick="loadPreviousLetterPart()">Previous Part ‹3</button>
+                <button class="button" id="nextLetterButton" style="display:none;" onclick="loadNextLetterPart()">Next Part ‹3</button>
+            </div>
+            </div>
+    </div>
+
+    <audio id="bg-music" src="/song/prettiest.mp3" loop></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        const part1 = `HELLOOO PANININIWIWIWIWIW, cewe winter, my home gworl, my bonnabel, my shaylaaa :p<br><br>HAPPY BIRTHDAY HOME GWORLLLL dont be sad that it'll be your last teen but be ambitious of how youre going to spend your last teen with accomplishments. I hope you well and safe, especially in this conditions. I hope you stop falling for weird people and eventually find someone who will love you unconditionally and willingly.<br><br> Thank you for being in my life, staying even after years of many form and phases i've had. You stayed and for the longest time you've become a good friend of mine. I wish you everythhing best for you and everything well. You deserve everything good in life; especially your love life LOL. I made this just for you to make up the fact that your presents will come late huhu. BUT I HOPE YOU LIKE ITTTT<br><br> For the first part ini dulu yeah, i have more to tell you on the next slidee!<br><br><br><br>`;
+        const part2 = `Weird to say, and i feel like I'm wrong to say this, but i might've still like you for this past moments. We chat even talk often and i know damn well you don't like me at all. At least in 'that' kind of way. Tried to burry it deep and i did kinda succeed halfway. We're friends, and good friends tbh. We laughed about our past that was kinda dumb and stupid. I don't think i can even consider what happened back then was dating because how short we lasted lol. I mean now, i take it as admiring you of a person. As a person you're charming, not only your appearance but the way you act. You care for people deeply—sometimes too deeply; you're funny and oddly comforting.<br><br>I think that's what I take from you. Comforting.<br><br>This is rather silly but i've realized back then when i started to change bias in txt from gyu to soob, i think i was missing you. Or i was trying to separate you from my mind by making soob my bias and take it as a rival thing. Weird, i know. It's more of a coping mechanism and a way for me to stop myself from being attached to you. And in the end soobin is always you. Now i like Kai and you see the contrast of my personality in that 2 years of no contact from each other that changed me a lot. Or I'm just growing up? I don't really know. I'm not as loud as gyu anymore, not as confident, and not as goofy as him. I'm quite, slightly unconfident, even when I'm loud like Kai would, I wouldn't be as loud as bg; atleast that's how the dynamic is in txt.<br>Heuning is quieter and gyu is just over energized.<br>That was a long ass unexplainable explanation.<br><br>Well, all I just want to say is. Deep down i do still like you and what i do these days is i just keep my feelings all to myself. But in any chance if you'd ever feel the same, i know i would instantly fold. Wich is embarrassing to say. I honestly feel like i haven't gotten the chance to admire you properly. Because the fact of how i was just a kid back then. I can't even imagine how dating a 7th grader would be; let alone a 5th grader. I was basically a child that hadn't even surpass puberty. And it's funny how i got attached to you. And i still kinda of do. In a mature way... I guess?<br><br>But all in all just being friends is great. And no don't worry, me trying to separate you from your exes was not out of jealousy. They're actually really really obsessive. Like, really obsessed. Wich is concerning. Red flag everywhere. I did that pure of protecting you as a friend.<br><br>I did that pure of protecting you as a friend.Me liking you is separated from how i act with you as your friend. If I say i'm your friend i will love and protect you as a friend. I really do. I won't put that feelings into romantic because that's just ridiculous. It's like delusional to the max.In short; if i'd be given the chance to love you as a friend, i will love you as a friend. Nothing more. Because that's the only chance I got in to actually love you properly. In my own way. In a friendly way. Platonic as you may say.<br><br>Tbh me just having 2 exes and one out of two is you already showed how impacting you were in my life. Both in a good way and in a bad way. I feel bad for you to have witness me at such a young age. When i looked back into it, it was actually really embarrassing from how cringe I was. I was... Too young for the internet. I BLAME THE INTERNET.<br><br>Ps I'm so fond of you pan, both romantically and platonically.<br><br><br><br>`
+        const part3 = `Hai paniw, So... that letter was from a year ago when i was still hopeful. Its now has come to the point where i value our friendship so much that i fear if i make it weird i would lose you again. And i will completely be honest with you, i never lost feelings for you. I just buried it deep down and try not to acknowledge it.<br><br>In all honesty I dont think i'll ever date any other girls knowing whenever i search for love, i searched for you. And god forbid i can't see another girl without picturing you. You gave me the comfort and joy no one else could ever give.<br><br>I value you a lot and i admire you more than just a friend. I never try to shoot my shot or take a chance with you because i know you dont like me that way. And i promise you whenever im helping you solve your love problems i never used my feelings and try to give myself a chance; as in like, i have always view it as a friend thing. I try to not let my feelings intervene. I try really really hard. And so, you dont need to reply anything or feel obligated to text me if you have nothing to say. You dont need to answer my feelings nor this letter. But if you want to i'd feel very happy and thankful.<br><br>I've always been so fond of you pani,<br> Happy birthday sweet girl. Tons of love, your Marceline.<br><br><br><br>`;
+
+        const letterParts = [part1, part2, part3];
+
+        let currentPage = 1;
+        const totalPages = 7;
+        let isTyping = false;
+        let currentPartIndex = 0;
+
+        function goToPage(pageNum) {
+          if (isTyping) return;
+
+            const pages = document.querySelectorAll('.page');
+            const prevPage = document.getElementById(`page${currentPage}`);
+            const nextPage = document.getElementById(`page${pageNum}`);
+
+            pages.forEach(p => p.classList.remove('active', 'prev'));
+            
+            if (pageNum > currentPage) {
+                 prevPage.classList.add('prev');
+            } else {
+                 nextPage.classList.add('prev');
+            }
+            
+            nextPage.classList.add('active');
+            
+            currentPage = pageNum;
+
+            if (pageNum === 7) {
+                const music = document.getElementById("bg-music");
+                music.play().catch(e => console.log("autoplay blocked:", e)); 
+
+                shootConfetti();
+                
+                currentPartIndex = 0;
+                document.getElementById('letterText').innerHTML = '';
+                document.getElementById('nextLetterButton').style.display = 'none';
+                document.getElementById('prevLetterButton').style.display = 'none';
+                loadPart(currentPartIndex);
+                startFallingSymbols();
+            } else {
+                 document.getElementById("bg-music").pause();
+                 document.getElementById('nextLetterButton').style.display = 'none';
+                 document.getElementById('prevLetterButton').style.display = 'none';
+            }
+        }
+
+        function loadPart(index) {
+            if (index >= 0 && index < letterParts.length) {
+                typeText(letterParts[index], document.getElementById('letterText'), 30, index);
+            }
+        }
+
+        function loadNextLetterPart() {
+            if (isTyping) return;
+
+            currentPartIndex++;
+            loadPart(currentPartIndex);
+            
+            document.getElementById('nextLetterButton').style.display = 'none';
+            document.getElementById('prevLetterButton').style.display = 'none';
+            document.getElementById('nextLetterButton').innerText = 'next part ‹3';
+            document.getElementById('nextLetterButton').style.backgroundColor = '';
+            document.getElementById('nextLetterButton').style.color = '';
+        }
+
+        function loadPreviousLetterPart() {
+            if (isTyping || currentPartIndex === 0) return;
+
+            currentPartIndex--;
+            loadPart(currentPartIndex);
+            
+            const nextButton = document.getElementById('nextLetterButton');
+            const prevButton = document.getElementById('prevLetterButton');
+            
+            nextButton.style.display = 'none';
+            prevButton.style.display = 'none';
+            nextButton.innerText = 'next part ‹3';
+            nextButton.style.backgroundColor = '';
+            nextButton.style.color = '';
+            nextButton.onclick = loadNextLetterPart; 
+        }
+
+        function typeText(text, element, speed, partIndex) {
+            isTyping = true;
+            element.innerHTML = '';
+            const typingStatus = document.getElementById('typing-status');
+            typingStatus.innerHTML = 'tunggu sampai suratnya selesai diketik yaa! <span class="typing-cursor"></span>';
+
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML = text.substring(0, i + 1) + '<span class="typing-cursor"></span>';
+                    element.scrollTop = element.scrollHeight;
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    isTyping = false;
+                    element.innerHTML = text;
+
+                    const nextButton = document.getElementById('nextLetterButton');
+                    const prevButton = document.getElementById('prevLetterButton');
+                    
+                    if (partIndex < letterParts.length - 1) {
+                        nextButton.style.display = 'block';
+                        prevButton.style.display = (partIndex > 0) ? 'block' : 'none';
+                        typingStatus.innerHTML = `bagian ${partIndex + 1} selesai dibaca!`;
+                        nextButton.innerText = 'next part ‹3';
+                        nextButton.style.backgroundColor = ''; 
+                        nextButton.style.color = '';
+                        nextButton.onclick = loadNextLetterPart;
+                    } else {
+                        typingStatus.innerHTML = 'pesan selesai dibaca! happy birthday sayangg! ♡';
+                        prevButton.style.display = 'block';
+                        nextButton.style.display = 'none';
+                    }
+                }
+            }
+            type();
+        }
+        
+        function shootConfetti() {
+             confetti({
+                 particleCount: 250,
+                 spread: 150,
+                 origin: { y: 0.5 },
+                 colors: ['#a0522d', '#d2b48c', '#f8f0e5', '#ead7bd', '#4b3e3e'], 
+                 shapes: ['circle', 'square', 'star'],
+                 disableForReducedMotion: true
+             });
+        }
+
+        function startFallingSymbols() {
+            const symbols = ['🤎', '🐻', '🍰', '✨', '🎁', '🎈', '🤍', '💐', '💌', '⭐'];
+            const container = document.querySelector('.page-container');
+            
+            if (window.fallingInterval) {
+                clearInterval(window.fallingInterval);
+                document.querySelectorAll('.falling').forEach(el => el.remove());
+            }
+
+            window.fallingInterval = setInterval(() => {
+                const el = document.createElement('div');
+                el.classList.add('falling');
+                el.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                el.style.left = Math.random() * 95 + 'vw';
+                el.style.animationDuration = `${3 + Math.random() * 3}s`;
+                el.style.animationDelay = `-${Math.random() * 2}s`;
+                el.style.opacity = `${0.6 + Math.random() * 0.4}`;
+                container.appendChild(el);
+                
+                setTimeout(() => el.remove(), 6000);
+            }, 100);
+        }
+
+        window.onload = () => {
+            shootConfetti();
+        };
+    </script>
+</body>
+</html>
